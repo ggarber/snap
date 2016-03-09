@@ -50,7 +50,7 @@ describe('Logging', function() {
         process.env.NODE_ENV = 'prepro';
         logger = logging.getLogger('NODE_ENV - prepro')
       })
-      it('should show on debug', function() {
+      it('should NOT show on debug', function() {
         shouldNotShow(logger, 'debug');
       });
       it('should show on info', function() {
@@ -70,7 +70,7 @@ describe('Logging', function() {
         process.env.NODE_ENV = 'production';
         logger = logging.getLogger('NODE_ENV - production')
       })
-      it('should show on debug', function() {
+      it('should NOT show on debug', function() {
         shouldNotShow(logger, 'debug');
       });
       it('should show on info', function() {
@@ -90,10 +90,10 @@ describe('Logging', function() {
         process.env.NODE_ENV = 'test';
         logger = logging.getLogger('NODE_ENV - test')
       })
-      it('should show on debug', function() {
+      it('should NOT show on debug', function() {
         shouldNotShow(logger, 'debug');
       });
-      it('should show on info', function() {
+      it('should NOT show on info', function() {
         shouldNotShow(logger, 'info');
       });
       it('should show on warn', function() {
@@ -132,7 +132,7 @@ describe('Logging', function() {
         process.env.NODE_LOG_LEVEL = 'info';
         logger = logging.getLogger('NODE_LOG_LEVEL - info')
       })
-      it('should show on debug', function() {
+      it('should NOT show on debug', function() {
         shouldNotShow(logger, 'debug');
       });
       it('should show on info', function() {
@@ -176,10 +176,10 @@ describe('Logging', function() {
         process.env.NODE_LOG_LEVEL = 'warn'; // this should disable 'info' output
         logger = logging.getLogger('mixing production with debug')
       })
-      it('should show on debug', function() {
+      it('should NOT show on debug', function() {
         shouldNotShow(logger, 'debug');
       });
-      it('should show on info', function() {
+      it('should NOT show on info', function() {
         shouldNotShow(logger, 'info');
       });
       it('should show on warn', function() {
