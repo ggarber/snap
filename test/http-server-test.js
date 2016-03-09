@@ -14,7 +14,7 @@ describe('Server Filter', function() {
       done();
     });
   });
-  
+
   it('should generate logs for requests', function(done) {
     var logged = false;
     logging.getLogger('server1').info = function() {
@@ -29,6 +29,5 @@ describe('Server Filter', function() {
       done();
     });
   });
-  
-});
 
+});
